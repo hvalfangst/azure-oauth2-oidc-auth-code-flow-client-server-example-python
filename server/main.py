@@ -1,6 +1,5 @@
 # server/main.py
 
-import uvicorn
 from fastapi import FastAPI
 
 from server.routers import heroes
@@ -14,6 +13,3 @@ app = FastAPI(
 print("Starting up heroes application")
 
 app.include_router(heroes.router, prefix="/api", tags=["Heroes"])
-
-if __name__ == '__main__':
-    uvicorn.run('main:app', host='0.0.0.0', port=8000)
