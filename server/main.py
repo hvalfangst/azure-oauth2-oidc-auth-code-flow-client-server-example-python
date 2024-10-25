@@ -11,6 +11,8 @@ app = FastAPI(
     version="1.0.0"
 )
 
+print("Starting up heroes application")
+
 app.include_router(heroes.router, prefix="/api", tags=["Heroes"])
 
 if __name__ == '__main__':
