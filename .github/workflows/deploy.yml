@@ -17,10 +17,14 @@ jobs:
         with:
           python-version: 3.11
 
-      - name: Install Dependencies
+      - name: Create and start virtual environment
         run: |
           python -m venv venv
           source venv/bin/activate
+          pip install -r server/requirements.txt
+
+      - name: Install depedencies from requirements file
+        run: |
           pip install -r server/requirements.txt
 
       - name: Deploy to Azure
