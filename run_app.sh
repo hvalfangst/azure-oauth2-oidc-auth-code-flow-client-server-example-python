@@ -24,6 +24,6 @@ pip install --upgrade pip
 echo "Installing dependencies from requirements.txt..."
 pip install -r server/requirements.txt
 
-# Run the FastAPI application using gunicorn with uvicorn worker
-echo "Starting FastAPI application with gunicorn..."
-gunicorn -w 4 -k uvicorn.workers.UvicornWorker server.main:app --bind 0.0.0.0:8000
+# Run the FastAPI application using uvicorn
+echo "Starting FastAPI application..."
+python -m uvicorn server.main:app

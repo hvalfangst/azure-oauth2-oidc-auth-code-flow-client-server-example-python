@@ -10,12 +10,12 @@ app = FastAPI(
     version="1.0.0"
 )
 
-logger.logger.info("Starting up API")
+logger.info("Starting up API")
 
 
 @app.get("/")
 def index():
-    return "This is a REST API for enabling my ML model to be used by other services."
+    return "Hvalfangst FastAPI deployed to Azure App Service"
 
 
 app.include_router(heroes.router, prefix="/api", tags=["Heroes"])
