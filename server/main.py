@@ -1,7 +1,7 @@
 # server/main.py
 
 from fastapi import FastAPI
-
+from server.logger import logger
 from server.routers import heroes
 
 app = FastAPI(
@@ -10,6 +10,12 @@ app = FastAPI(
     version="1.0.0"
 )
 
-print("Starting up heroes application")
+logger.logger.info("Starting up API")
+
+
+@app.get("/")
+def index():
+    return "This is a REST API for enabling my ML model to be used by other services."
+
 
 app.include_router(heroes.router, prefix="/api", tags=["Heroes"])
